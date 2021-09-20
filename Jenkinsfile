@@ -31,7 +31,7 @@ spec:
   stages {
     stage('Install docker') {
       steps {
-        sh 'apk add docker'
+        sh 'apk add docker git'
       }
     }
     stage('Build image') {

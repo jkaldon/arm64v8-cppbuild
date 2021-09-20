@@ -9,18 +9,18 @@ LABEL org.opencontainers.image.revision="-"
 LABEL org.opencontainers.image.source="https://github.com/jkaldon/arm64v8-cppbuild/tree/master"
 
 RUN apk add --no-cache \
-             bash \
-             libtool \
+             bash gettext \
+             gawk doxygen \
              autoconf automake \
-             make \
-             gawk \
-             g++ \
-             pkgconf \
-             db-c++ db-dev \
-             boost boost-dev boost-static \
+             libtool \
+             make ccache \
+             g++ gcc python3 \
+             llvm10 pkgconf \
+             db-c++ db-dev lldbdev \
+             boost boost-dev \
              miniupnpc miniupnpc-dev \
-             openssl openssl-dev openssl-libs-static \
-             libevent libevent-dev libevent-static \
-             czmq czmq-dev czmq-static && \
+             openssl openssl-dev \
+             libevent libevent-dev \
+             czmq czmq-dev && \
     update-ca-certificates 
 
